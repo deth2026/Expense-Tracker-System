@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker | Smart Finance Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/login.css">
+</head>
+<body>
+    <!-- AUTHENTICATION CONTAINER -->
+    <div class="auth-container" id="authContainer">
+        <div class="form-switcher">
+            <button class="switch-btn" id="switchFormBtn">Sign Up</button>
+        </div>
+
+        <div class="auth-box">
+            <!-- Info Panel -->
+            <div class="info-panel" id="infoPanel">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <span>ExpenseTrack</span>
+                </div>
+                <h1 id="infoTitle">Take Control of Your Finances</h1>
+                <h2 id="infoSubtitle">Login to track your expenses and manage your budget</h2>
+
+                <ul class="features">
+                    <li><i class="fas fa-check-circle"></i> Track daily expenses & income</li>
+                    <li><i class="fas fa-check-circle"></i> Visualize spending with charts</li>
+                    <li><i class="fas fa-check-circle"></i> Set monthly budgets and goals</li>
+                    <li><i class="fas fa-check-circle"></i> Generate financial reports</li>
+                    <li><i class="fas fa-check-circle"></i> Sync across all your devices</li>
+                </ul>
+            </div>
+
+            <!-- Form Panel -->
+            <div class="form-panel">
+                <!-- Login Form -->
+                <form class="login-form" id="loginForm">
+                    <div class="form-header">
+                        <h2>Welcome Back</h2>
+                        <p>Please enter your credentials to login</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="loginEmail" class="form-control" placeholder="Enter Email" required>
+                        </div>
+                        <div id="loginEmailError" class="error-message">Please enter a valid email address</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="loginPassword" class="form-control"
+                                placeholder="Enter your password" required>
+                            <button type="button" class="password-toggle" id="toggleLoginPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div id="loginPasswordError" class="error-message">Password is incorrect</div>
+                    </div>
+
+                    <div class="remember-forgot">
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="remember">
+                            <label for="remember">Remember me</label>
+                        </div>
+                        <a href="#" class="forgot-link" id="forgotPassword">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-auth">
+                        <i class="fas fa-sign-in-alt"></i> Login to Expense Tracker
+                    </button>
+
+                    <div id="loginSuccess" class="success-message">Login successful! Redirecting...</div>
+
+                    <div class="auth-link">
+                        Don't have an account? <a href="#" id="showSignup">Sign up now</a>
+                    </div>
+                </form>
+
+                <!-- Sign Up Form -->
+                <form class="signup-form" id="signupForm">
+                    <div class="form-header">
+                        <h2>Create Account</h2>
+                        <p>Join Expense Tracker to manage your finances</p>
+                    </div>
+
+                    <div class="name-group">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="firstName" class="form-control" placeholder="Enter First name"
+                                    required>
+                            </div>
+                            <div id="firstNameError" class="error-message">First name is required</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="lastName" class="form-control" placeholder="Enter Last name"
+                                    required>
+                            </div>
+                            <div id="lastNameError" class="error-message">Last name is required</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupEmail">Email Address</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="signupEmail" class="form-control" placeholder="Enter Email"
+                                required>
+                        </div>
+                        <div id="signupEmailError" class="error-message">Please enter a valid email address</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="signupPassword">Password</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="signupPassword" class="form-control"
+                                placeholder="Create a strong password" required>
+                            <button type="button" class="password-toggle" id="toggleSignupPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div id="signupPasswordError" class="error-message">Password must be at least 8 characters with
+                            letters and numbers</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" class="form-control"
+                                placeholder="Confirm your password" required>
+                            <button type="button" class="password-toggle" id="toggleConfirmPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <div id="confirmPasswordError" class="error-message">Passwords do not match</div>
+                    </div>
+
+                    <div class="terms-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy
+                                Policy</a></label>
+                        <div id="termsError" class="error-message">You must agree to the terms</div>
+                    </div>
+
+                    <button type="submit" class="btn-auth">
+                        <i class="fas fa-user-plus"></i> Create Account & Continue
+                    </button>
+
+                    <div id="signupSuccess" class="success-message">Account created successfully! Redirecting to home
+                        page...</div>
+
+                    <div class="auth-link">
+                        Already have an account? <a href="#" id="showLogin">Login here</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="../js/log.js"></script>
+</body>
+
+</html>
